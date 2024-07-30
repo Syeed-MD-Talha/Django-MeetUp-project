@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "styles/meetup.css" %}'>
+    <link rel="stylesheet" href='{% static "styles/meetup-detail.css" %}'>
+    <title>{{ meetup.title }} | DjangoMeetups</title>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <nav><a href="{% url 'homepage' %}" id="main-logo">DjangoMeetups</a></nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="meetup-details">
+            <div class="container">
+                <div class="meetup-details-card">
+                    <div class="meetup-image">
+                        <img src="{{meetup.image.url}}" alt="{{ meetup.title }}">
+                    </div>
+                    <h1>{{ meetup.title }}</h1>
+                    <p class="meetup-date">{{ meetup.date|date:"F d, Y" }} at {{ meetup.details.time }}</p>
+                    <p class="meetup-location"><strong>Location:</strong> {{ meetup.location }}</p>
+                    <p style="font-style: italic; font-size: 14px;" class="meetup-description">{{ meetup.details.description }}</p>
+                    <div class="meetup-organizer">
+                        <h2>Organizer</h2>
+                        <p>company: {{ meetup.details.organizer_name }}</p>
+                        <p>email: {{ meetup.details.organizer_email }}</p>
+                    </div>
+                    {% if registration_open %} 
+                        <a href="{% url 'registration' meetup.slug %}" class="btn btn-register">Register for this Meetup</a>
+                    {% else %}
+                        <p class="registration-closed">Registration is closed for this meetup.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container">
+            <p>&copy; 2024 DjangoMeetups. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

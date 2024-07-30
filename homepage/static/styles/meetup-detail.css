@@ -1,0 +1,208 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto Slab', sans-serif;
+  color: #2c3e50;
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+#main-header {
+  background-color: #34495e;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+#main-logo {
+  font-size: 2.5rem;
+  font-family: 'Roboto Slab', sans-serif;
+  color: #3498db;
+  font-weight: bold;
+}
+
+#main-header h1 {
+  font-size: 2.5rem;
+  margin: 20px 0 10px;
+}
+
+#main-header p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.meetups-section {
+  padding: 60px 0;
+}
+
+.meetups-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.meetup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.meetup-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.meetup-card:hover {
+  transform: translateY(-5px);
+}
+
+.meetup-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.meetup-content {
+  padding: 20px;
+}
+
+.meetup-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.meetup-location {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+#main-footer {
+  background-color: #34495e;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .meetup-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ... (previous styles remain the same) ... */
+
+/* Meetup Details Page Styles */
+.meetup-details {
+  padding: 60px 0;
+}
+
+.meetup-details-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.meetup-details-card .meetup-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.meetup-details-card h1 {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.meetup-details-card p {
+  padding: 0 20px;
+  margin-bottom: 15px;
+}
+
+.meetup-date, .meetup-location {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.meetup-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+.meetup-organizer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.meetup-organizer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.btn-register {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 20px;
+  text-align: center;
+}
+
+.registration-closed {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  margin: 20px;
+}
+
+@media (max-width: 768px) {
+  .meetup-details-card h1 {
+      font-size: 2rem;
+  }
+}

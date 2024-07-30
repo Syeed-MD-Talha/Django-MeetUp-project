@@ -1,0 +1,58 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "styles/base.css" %}'>
+    <link rel="stylesheet" href='{% static "styles/meetup-detail.css" %}'>
+    <title>DjangoMeetups</title>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <nav><a href="/meetups" id="main-logo">DjangoMeetups</a></nav>
+            <h1>Discover Amazing Meetups</h1>
+            <p>Find the perfect event to connect, learn, and grow</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="meetups-section">
+            <div class="container">
+                <h2>Upcoming Meetups</h2>
+                <div class="meetup-grid">
+                    {% for meetup_item in meetups %}
+                        <div class="meetup-card">
+                            <div class="meetup-image">
+                                <img src="{{meetup_item.image.url}}" alt="{{ meetup_item.title }}">
+                            </div>
+                            <div class="meetup-content">
+                                <h3>{{ meetup_item.title }}</h3>
+                                <p class="meetup-location">{{ meetup_item.location }}</p>
+                                <a href="{% url 'post_details' slug=meetup_item.slug  %}" class="btn">More details</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container">
+            <p>&copy; 2024 DjangoMeetups. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FontAwesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
+ 
